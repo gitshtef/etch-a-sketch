@@ -8,10 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        
-    </div>
+    <header>
+        <h1>Etch a sketch</h1>
+    </header>
 
+    <div id="container">
+        <div id="gridContainer"></div>
+        <div id="controls">
+            <div class="slideContainer">
+                <input type="range" min="16" max="100" value="16" class="slider" id="sliderRange" oninput="sliderRange()">
+                <div id="gridSize">16 x 16</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Created by <a href="https://github.com/gitshtef">shtef90</a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
