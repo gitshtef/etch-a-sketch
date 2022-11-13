@@ -1,17 +1,6 @@
 const gridContainer = document.getElementById('gridContainer');
-const input = document.getElementById('sliderRange');
+const slider = document.querySelector('.slider');
 let defaultSize = 16;
-
-function sliderRange() {
-    let range = document.getElementById('sliderRange').value;
-    console.log(range);
-    document.getElementById('gridSize').innerHTML = range; 
-    const removeSquare = document.getElementsByClassName('square');
-    removeSquare.remove();
-    createGrid(range);
-}
-
-//input.addEventListener("input",);
 
 function createGrid(size) {
 
@@ -29,6 +18,11 @@ function createGrid(size) {
             console.log('in');
         }        
     }
+}
+
+function recreateGrid() {
+    gridContainer.innerHTML = '';
+    createGrid(slider.value);
 }
 
 window.onload = () => {

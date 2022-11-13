@@ -58,3 +58,9 @@ a {
 .slider:hover {
     opacity: 1;
 }
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

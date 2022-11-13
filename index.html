@@ -16,9 +16,10 @@
         <div id="gridContainer"></div>
         <div id="controls">
             <div class="slideContainer">
-                <input type="range" min="16" max="100" value="16" class="slider" id="sliderRange" oninput="sliderRange()">
+                <input type="range" min="16" max="100" value="16" class="slider" id="sliderRange" onchange="recreateGrid()" oninput="gridSize.innerHTML = sliderRange.value">
                 <div id="gridSize">16 x 16</div>
             </div>
+            <button id="clearBtn" onclick="recreateGrid()">Clear</button>
         </div>
     </div>
     
