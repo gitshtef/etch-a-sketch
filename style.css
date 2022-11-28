@@ -33,15 +33,13 @@ a {
 #gridContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     margin-top: 50px;
     margin-bottom: 50px;
     border: solid 5px #404040;
     background-color: white;
 }
-
-
 
 #one {
     width: 200px;
@@ -61,6 +59,5 @@ a {
 
 #controls {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    gap: 10px;
 }

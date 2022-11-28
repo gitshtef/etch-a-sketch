@@ -1,6 +1,12 @@
 const gridContainer = document.getElementById('gridContainer');
 const slider = document.querySelector('.slider');
+const rainbow = document.getElementById('randomBtn');
+const eraser = document.getElementById('eraserBtn');
+const colorPicker = document.getElementById('favcolor');
+const shading = document.getElementById('shadingBtn');
 let defaultSize = 16;
+let color = "black";
+
 
 function createGrid(size) {
 
@@ -10,15 +16,28 @@ function createGrid(size) {
         let height = 400 / parseInt(size);
         div.style.height = `${height}px`;
         div.style.width = `${height}px`;
-        div.onmouseover = mouseOver;
         gridContainer.append(div);
-
-        function mouseOver() {
-            div.style.backgroundColor = 'black';
-            console.log('in');
-        }        
+        div.addEventListener('mouseover', (event) => {
+            event.target.style.backgroundColor = color;
+        });
+        rainbow.addEventListener('click', () => {
+            div.addEventListener('mouseover', (event) => {
+                event.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            });
+        });
+        eraser.addEventListener('click', () => {
+            div.addEventListener('mouseover', (event) => {
+                event.target.style.backgroundColor = 'white'; 
+            })
+        });
+        colorPicker.addEventListener('click', () => {
+            div.addEventListener('mouseover', (event) => {
+                event.target.style.backgroundColor = colorPicker.value;
+            })
+        });   
     }
 }
+
 
 function recreateGrid() {
     gridContainer.innerHTML = '';
